@@ -1,66 +1,76 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Million Dollar Insta Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            margin-top: 0;
-            padding-top: 5px;
-        }
-
         body {
             margin: 0;
             background-color: #f2f2f2;
             font-family: Arial, sans-serif;
         }
 
-        header,
-        footer {
+        header {
             background-color: #ff0a6c;
             color: white;
-            padding: 20px;
-            text-align: center;
-
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 30px;
         }
 
-        .footer-text {
-            font-size: 14px;
-            color: #aaa;
+        .header-left {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+            min-width: 250px;
         }
 
-
-        footer {
-
-            height: 20px;
-
-        }
-
-        h1 {
+        .header-left h1 {
             font-family: 'Rampart One', sans-serif;
-            color: rgb(247, 251, 252);
-            position: absolute;
-            top: 0px;
-            left: 15px;
-            font-size: 32px;
-        }
-
-        header {
-            height: 5px;
+            font-size: 30px;
+            margin: 0;
         }
 
         .subtitle {
-            position: absolute;
-            top: 0%;
-            right: 13%;
-            font-size: 125%;
+            font-size: 20px;
+            margin: 0;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            min-width: 150px;
+        }
+
+        .check-price-btn {
+            font-size: 16px;
+            padding: 6px 14px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .social-icons img {
+            width: 18px;
+            height: 18px;
         }
 
         nav {
@@ -80,11 +90,6 @@
             color: rgb(7, 227, 243);
             text-decoration: underline;
         }
-
-        .pixel-containers {
-            margin-left: 0;
-        }
-
 
         .scroll-container {
             overflow-x: auto;
@@ -119,36 +124,60 @@
             background-color: red;
         }
 
-        button {
-            font-size: 20px;
-            background-color: #4CAF50;
+        footer {
+            background-color: #ff0a6c;
             color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            position: absolute;
-            top: 0px;
-            right: 20px;
-            padding: 10px 20px;
-            z-index: 999;
+            padding: 10px;
+            text-align: center;
         }
-        .social
-        {
-            position: absolute;
-            top: 50px;
-            right: 50px;
+
+        .footer-text {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .header-left, .header-right {
+                align-items: flex-start;
+            }
+            .header-left {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .header-right {
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
-
 <body>
+
     <header>
-        <h1>Million Dollar Insta Page</h1>
-        <p class="subtitle"><b>2,000,000 pixels – $1 per pixel – Own Your Slice Of Web History!</b></p>
+        <div class="header-left">
+            <h1>Million Dollar Insta Page</h1>
+            <p class="subtitle"><b>2,000,000 pixels – $1 per pixel – Own Your Slice Of Web History!</b></p>
+        </div>
+        <div class="header-right">
+            <button class="check-price-btn" onclick="goToPricing()"><b>Check Price</b></button>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/milliondollarinstapage2025?igsh=bzlyaDb5cXdvZG41" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/023/208/209/non_2x/instagram-logo-icon-free-png.png"
+                        alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/previews/042/127/218/non_2x/round-circle-blue-facebook-logo-with-long-shadow-on-a-transparent-background-free-png.png"
+                        alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/company/milliondollarinstapage/" target="_blank">
+                    <img src="https://www.freeiconspng.com/uploads/linkedin-icon-8.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
     </header>
 
     <nav>
-        <a href="headerandfooter.html">Home</a> |
+        <a href="headerandfooter.html" style="margin-left: 100px;">Home</a> |
         <a href="buypixel.html">Buy Pixels</a> |
         <a href="topbuyers.html">Top Buyers</a> |
         <a href="testimonial.html">Testimonials</a> |
@@ -157,28 +186,12 @@
         <a href="faq.html">FAQ</a> |
         <a href="blog.html">Blog</a> |
         <a href="press.html">Press</a> |
-        <a href="contact.html">Contact Me</a> 
+        <a href="contact.html">Contact Me</a>
     </nav>
+
     <div class="scroll-container">
-
         <div class="pixel-containers" id="pixelGrid"></div>
-
     </div>
-    <div class="social">
-        <a href="https://www.instagram.com/milliondollarinstapage2025?igsh=bzlyaDb5cXdvZG41" target="_blank" id="insta">
-            <img src="https://static.vecteezy.com/system/resources/previews/023/208/209/non_2x/instagram-logo-icon-free-png.png"alt="Instagram" width="20" height="20">
-        </a>
-
-        <a href="https://www.facebook.com/yourpage" target="_blank" id="fb">
-            <img src="https://static.vecteezy.com/system/resources/previews/042/127/218/non_2x/round-circle-blue-facebook-logo-with-long-shadow-on-a-transparent-background-free-png.png" alt="Facebook"
-                width="20" height="20">
-        </a>
-        <a href="https://www.linkedin.com/company/milliondollarinstapage/" target="_blank" id="linkedin">
-            <img src="https://www.freeiconspng.com/uploads/linkedin-icon-8.png" alt="linkedin" width="20" height="20">
-        </a>
-    </div>
-
-    <button onclick="goToPricing()"><b>Check Price</b></button>
 
     <footer>
         <p class="footer-text">
@@ -232,8 +245,6 @@
             localStorage.setItem('selectedPixels', JSON.stringify(selectedPixelsData));
             window.location.href = `buypixel.html`;
         }
-
     </script>
 </body>
-
 </html>
