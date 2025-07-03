@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Million Dollar Insta Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 0;
+            padding-top: 5px;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        header,
+        footer {
+            background-color: #ff0a6c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+
+        footer {
+
+            height: 20px;
+
+        }
+
+        h1 {
+            font-family: 'Rampart One', sans-serif;
+            color: rgb(247, 251, 252);
+            position: absolute;
+            top: 0px;
+            left: 15px;
+            font-size: 32px;
+        }
+
+        header {
+            height: 5px;
+        }
+
+        .subtitle {
+            position: absolute;
+            top: 0%;
+            right: 13%;
+            font-size: 125%;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, #ff0a6c, #9903f0);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        nav a:hover {
+            color: rgb(7, 227, 243);
+            text-decoration: underline;
+        }
+
+        .pixel-containers {
+            margin-left: 0;
+        }
+
+
+        .scroll-container {
+            overflow-x: auto;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .pixel-containers {
+            width: 2000px;
+            height: 1000px;
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 10px 10px;
+            background-color: #f3f3f3;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .pixel {
+            width: 10px;
+            height: 10px;
+            float: left;
+            box-sizing: border-box;
+            border: 0.5px solid rgba(238, 3, 3, 0.05);
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .pixel.selected {
+            background-color: red;
+        }
+
+        button {
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            padding: 10px 20px;
+            z-index: 999;
+        }
+        .social
+        {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Million Dollar Insta Page</h1>
+        <p class="subtitle"><b>2,000,000 pixels – $1 per pixel – Own Your Slice Of Web History!</b></p>
+    </header>
+
+    <nav>
+        <a href="headerandfooter.html">Home</a> |
+        <a href="buypixel.html">Buy Pixels</a> |
+        <a href="topbuyers.html">Top Buyers</a> |
+        <a href="testimonial.html">Testimonials</a> |
+        <a href="aboutus.html">About Us</a> |
+        <a href="pixelslist.html">Pixel List</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="blog.html">Blog</a> |
+        <a href="press.html">Press</a> |
+        <a href="contact.html">Contact Me</a> 
+    </nav>
+    <div class="scroll-container">
+
+        <div class="pixel-containers" id="pixelGrid"></div>
+
+    </div>
+    <div class="social">
+        <a href="https://www.instagram.com/milliondollarinstapage2025?igsh=bzlyaDb5cXdvZG41" target="_blank" id="insta">
+            <img src="https://static.vecteezy.com/system/resources/previews/023/208/209/non_2x/instagram-logo-icon-free-png.png"alt="Instagram" width="20" height="20">
+        </a>
+
+        <a href="https://www.facebook.com/yourpage" target="_blank" id="fb">
+            <img src="https://static.vecteezy.com/system/resources/previews/042/127/218/non_2x/round-circle-blue-facebook-logo-with-long-shadow-on-a-transparent-background-free-png.png" alt="Facebook"
+                width="20" height="20">
+        </a>
+        <a href="https://www.linkedin.com/company/milliondollarinstapage/" target="_blank" id="linkedin">
+            <img src="https://www.freeiconspng.com/uploads/linkedin-icon-8.png" alt="linkedin" width="20" height="20">
+        </a>
+    </div>
+
+    <button onclick="goToPricing()"><b>Check Price</b></button>
+
+    <footer>
+        <p class="footer-text">
+            Million Dollar Insta Page © 2025 Arun Kumar. All rights reserved. I am not responsible for the content of
+            external sites. Images featured on homepage are © of their respective owners.
+        </p>
+    </footer>
+
+    <script>
+        const pixelGrid = document.getElementById('pixelGrid');
+        const selectedPixelsData = [];
+
+        const width = 200;
+        const height = 100;
+        const totalPixels = width * height;
+
+        for (let i = 0; i < totalPixels; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            pixel.dataset.id = i;
+
+            pixel.addEventListener('click', () => {
+                const row = Math.floor(i / width);
+                const col = i % width + 1;
+                const address = String.fromCharCode(97 + row) + col;
+
+                if (!pixel.classList.contains("selected")) {
+                    pixel.classList.add("selected");
+                    selectedPixelsData.push({
+                        id: i,
+                        address: address,
+                        color: "red",
+                    });
+                } else {
+                    pixel.classList.remove("selected");
+                    const index = selectedPixelsData.findIndex(p => p.id === i);
+                    if (index !== -1) selectedPixelsData.splice(index, 1);
+                }
+
+                localStorage.setItem('selectedPixels', JSON.stringify(selectedPixelsData));
+            });
+
+            pixelGrid.appendChild(pixel);
+        }
+
+        function goToPricing() {
+            if (selectedPixelsData.length === 0) {
+                alert("Please select at least one pixel!");
+                return;
+            }
+            localStorage.setItem('selectedPixels', JSON.stringify(selectedPixelsData));
+            window.location.href = `buypixel.html`;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Million Dollar Insta Page - Top Buyers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #faf2f2;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        header {
+            background-color: #ff0a6c;
+            color: white;
+            padding: 30px 10px 10px 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Rampart One', sans-serif;
+            color: white;
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #ccc;
+            margin-top: 8px;
+        }
+
+        nav {
+            background: linear-gradient(to bottom, #ff0a6c, #9903f0);
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+
+        nav a:hover {
+            color: rgb(7, 227, 243);
+            text-decoration: underline;
+        }
+
+        .main-content {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .buyers-container {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .buyers-container h2 {
+            color: #ff0a6c;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #444;
+        }
+
+        th {
+            background-color: #ff0a6c;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #ff0a6c;
+        }
+
+        .rank {
+            font-weight: bold;
+            color: #00ffcc;
+        }
+
+        footer {
+            background-color: #ff0a6c;
+            color: #aaa;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .title1 {
+            border: 3px solid rgb(243, 5, 136);
+            width: 150px;
+            color: black;
+            border-radius: 30px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #insta,
+        #fb,
+        #linkedin {
+            padding: 0 0px;
+        }
+
+        .table-box {
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Million Dollar Insta Page</h1>
+        <p class="subtitle"><b>2,000,000 dollars - $1 per pixel - Own Your Slice Of Web History!</b></p>
+    </header>
+
+    <div>
+        <nav>
+            <a href="headerandfooter.html" style="margin-left: 100px;">Home</a> |
+            <a href="buypixel.html">Buy Pixels</a> |
+            <a href="topbuyers.html">Top Buyers</a> |
+            <a href="testimonial.html">Testimonials</a> |
+            <a href="aboutus.html">About Us</a> |
+            <a href="pixelslist.html">Pixel List</a> |
+            <a href="faq.html">FAQ</a> |
+            <a href="blog.html">Blog</a> |
+            <a href="press.html">Press</a> |
+            <a href="contact.html">Contact Me</a>
+
+            <a href="https://www.instagram.com/milliondollarinstapage2025?igsh=bzlyaDb5cXdvZG41" target="_blank"
+                id="insta" style="margin-left: 30px;">
+                <img src="https://static.vecteezy.com/system/resources/previews/023/208/209/non_2x/instagram-logo-icon-free-png.png"
+                    alt="Instagram" width="20" height="20">
+            </a>
+            <a href="https://www.facebook.com/yourpage" target="_blank" id="fb">
+                <img src="https://static.vecteezy.com/system/resources/previews/042/127/218/non_2x/round-circle-blue-facebook-logo-with-long-shadow-on-a-transparent-background-free-png.png"
+                    alt="Facebook" width="20" height="20">
+            </a>
+            <a href="https://www.linkedin.com/company/milliondollarinstapage/" target="_blank" id="linkedin"
+                style="margin-right: 0px;">
+                <img src="https://www.freeiconspng.com/uploads/linkedin-icon-8.png" alt="linkedin" width="20"
+                    height="20">
+            </a>
+
+        </nav>
+    </div>
+
+    <h3 class="title1">Top Buyers</h3>
+
+    <div class="main-content">
+        <div class="buyers-container">
+            <h2>Top 10 Pixel Buyers</h2>
+            <table class="table-box">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Buyer Name</th>
+                        <th>Pixels Bought</th>
+                    </tr>
+                </thead>
+                <tbody id="buyerTableBody">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="footer-text">Million Dollar Instapage © 2025 Arun Kumar. All rights reserved.<br>
+            I am not responsible for the content of external sites. Images featured on homepage are © of their
+            respective owners.
+        </p>
+    </footer>
+
+    <script>
+
+        // Buyer Data
+        const buyers = [
+            { name: "Aravind", pixels: 1200 },
+            { name: "abilash", pixels: 1100 },
+            { name: "srinithi", pixels: 1050 },
+            { name: "lavanya", pixels: 1000 },
+            { name: "Eva", pixels: 950 },
+            { name: "Grace", pixels: 900 },
+            { name: "Jack", pixels: 850 },
+            { name: "Vasudevan", pixels: 800 },
+            { name: "Suresh", pixels: 750 },
+            { name: "Ramesh", pixels: 700 }
+        ];
+
+        const tbody = document.getElementById("buyerTableBody");
+        buyers.forEach((buyer, index) => {
+            const row = `<tr>
+                <td class="rank">#${index + 1}</td>
+                <td>${buyer.name}</td>
+                <td>${buyer.pixels}</td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    </script>
+
+</body>
+
+</html>
