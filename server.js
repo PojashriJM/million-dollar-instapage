@@ -43,8 +43,8 @@ app.post('/send-mail', upload.single('image'), (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'milliondollarinstapage2025@gmail.com',
-      pass: 'utzp phrt hseq unrt'
+      user: envuser,
+      pass: envpass
     }
   });
 
